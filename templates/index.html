@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Text Count</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+  <style>
+    body {
+      background-color: #e3f2fd;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="row">
+      <div class="col-12">
+        <div class="text-center">
+          <h1 class="mt-5">Text Count</h1>
+          <p>Enter your text:</p>
+          <form method="POST">
+            <div class="form-group">
+                <textarea class="form-control" rows="10" name="text" value="{{ request.form['text'] if request.method == 'POST' else '' }}"></textarea>
+            </div>
+            <button type="submit" class="btn btn-primary">Submit</button>
+          </form>
+          {% if result %}
+          <div class="mt-5">
+            <h2>Result:</h2>
+            <table class="table table-bordered">
+              <tbody>
+                <tr>
+                  <td>Number of sentences:</td>
+                  <td>{{ result['sentences'] }}</td>
+                </tr>
+                <tr>
+                  <td>Number of words:</td>
+                  <td>{{ result['words'] }}</td>
+                </tr>
+                <tr>
+                  <td>Number of characters:</td>
+                  <td>{{ result['characters'] }}</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          {% endif %}
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-12 text-center">
+        <p>© 2023 Text Count</p>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

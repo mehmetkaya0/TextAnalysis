@@ -1,4 +1,4 @@
-### Text Count
+# Text Count
 
 Text Count is a simple web application built with Python and Flask that allows users to input text and get a count of the number of sentences, words, and characters in the text. It provides a clean and user-friendly interface where users can enter their text and receive instant results in a table format.
 
